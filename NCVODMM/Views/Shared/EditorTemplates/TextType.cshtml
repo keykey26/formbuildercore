@@ -1,0 +1,16 @@
+﻿@model TextType
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+	@Html.HiddenFor(m => m.Label)
+	@Html.HiddenFor(m => m.Name)
+	@Html.HiddenFor(m => m.Placeholder)
+	@Html.HiddenFor(m => m.Type)
+	@Html.LabelFor(m => m.Value, Model.Label)
+	@Html.TextBoxFor(m => m.Value)
+	@*<input type="text" name="@Model.Value" id="@Model.Value" placeholder="@Model.Placeholder" />*@
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
